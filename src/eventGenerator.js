@@ -20,7 +20,7 @@ class EventGenerator {
     for (let i = 0; i < maxEvents; ++i) {
       events.push(new WorldEvent(this.getRandomInt(startYear, endYear), this.getRandomItem(this.TYPES)));
     }
-    return events;
+    return events.sort((a, b) => a.year - b.year);
   }
 
   generateMoneyBubbles(startYear = 1805, endYear = 2100, maxEvents = 30) {
@@ -28,7 +28,7 @@ class EventGenerator {
     for (let i = 0; i < maxEvents; ++i) {
       bubbles.push(new MoneyBubble(this.getRandomInt(startYear, endYear), this.getRandomItem(this.CONTINENTS), this.getRandomInt(1, 15)));
     }
-    return bubbles;
+    return bubbles.sort((a, b) => a.year - b.year);
   }
 
   getRandomItem(array) {
