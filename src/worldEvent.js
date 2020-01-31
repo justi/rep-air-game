@@ -1,19 +1,19 @@
-'use strict'
+"use strict";
 
 class WorldEvent {
-  constructor (year, type) {
-    this.year = year
-    this.type = type
+  constructor(year, type) {
+    this.year = year;
+    this.type = type;
   }
 
   run(state) {
-    if (typeof this[type] == 'function') {
-      return this[type](state)
+    if (typeof this[this.type] == "function") {
+      return this[this.type](state);
     }
-    return state
+    return state;
   }
 
-  volcanoEruption (state) {
-    return state.pollution.water += 1
+  volcanoEruption() {
+    return (game.pollution.water += 1);
   }
 }

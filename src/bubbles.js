@@ -33,6 +33,7 @@ class Bubbles {
 
   clicked(bubble) {
     bubble.disabled = true;
+    bubble.checked = false;
     console.log(this.money[bubble.name]);
     game.money += this.money[bubble.name];
     clearTimeout(this.timers[bubble.name]);
