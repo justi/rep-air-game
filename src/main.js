@@ -33,7 +33,7 @@ class Game {
   }
 
   updatePopulation() {
-    this.populationTag.innerHTML = this.pollution.population;
+    this.populationTag.innerHTML = this.pollution.getPopulationLeft();
   }
 
   updateDisplayEvents() {

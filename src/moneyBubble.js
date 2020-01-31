@@ -7,14 +7,9 @@ class MoneyBubble {
     this.value = value;
   }
 
-  run(state) {
+  run() {
     if (typeof this[type] == "function") {
-      return this[type](state);
+      this[type]();
     }
-    return state;
-  }
-
-  bubbleAfrica() {
-    return game.bubbles.enable("africa", this.value);
   }
 }
