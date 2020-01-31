@@ -7,6 +7,7 @@ class Game {
     this.time = 1000;
     this.moneyTag = document.getElementById("money");
     this.yearTag = document.getElementById("year");
+    this.populationTag = document.getElementById("population");
     this.bubbles = new Bubbles();
     this.pollution = new Pollution();
     this.eventGenerator = new EventGenerator();
@@ -15,6 +16,7 @@ class Game {
     this.mainTimer = setTimeout(() => this.update(), this.time);
     this.updateMoney();
     this.updateYear();
+    this.updatePopulation();
     console.log(this.events, this.moneyBubbles);
   }
 
@@ -24,6 +26,10 @@ class Game {
 
   updateYear() {
     this.yearTag.innerHTML = this.year;
+  }
+
+  updatePopulation() {
+    this.populationTag.innerHTML = this.pollution.population;
   }
 
   update() {
@@ -37,8 +43,11 @@ class Game {
       console.log(bubble);
       this.bubbles.enable(bubble.type, bubble.value);
     }
+    this.pollution.killPeople(this.year);
+    this.pollution.increasePollution(this.year);
     this.mainTimer = setTimeout(() => this.update(), this.time);
     this.updateYear();
+    this.updatePopulation();
   }
 }
 

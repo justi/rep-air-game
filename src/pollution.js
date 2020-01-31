@@ -11,11 +11,18 @@ class Pollution {
   }
 
   killPeople(year) {
-    return Math.max(this.population - this.killRate(year), 0);
+    this.population = Math.max(this.population - this.killRate(year), 0);
+    return this.population;
   }
 
   killRate (year) {
     return (year * this.difficulty)*(this.water + this.air + this.earth);
+  }
+
+  increasePollution(year) {
+    this.water += 0.1;
+    this.air += 0.1;
+    this.earth += 0.1;
   }
 
   getPopulationLeft() {
