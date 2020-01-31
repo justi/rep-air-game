@@ -4,6 +4,7 @@ class Game {
   constructor() {
     this.money = 0;
     this.year = 1800;
+    this.maxYear = 2100;
     this.time = 1000;
     this.moneyTag = document.getElementById("money");
     this.yearTag = document.getElementById("year");
@@ -45,7 +46,9 @@ class Game {
     }
     this.pollution.killPeople(this.year);
     this.pollution.increasePollution(this.year);
-    this.mainTimer = setTimeout(() => this.update(), this.time);
+    if (this.year < this.maxYear) {
+      this.mainTimer = setTimeout(() => this.update(), this.time);
+    }
     this.updateYear();
     this.updatePopulation();
   }
