@@ -6,19 +6,19 @@ class Game {
     this.context = this.canvas.getContext("2d");
     this.lastUpdate = Date.now();
 
-    window.requestAnimationFrame(this.loop);
+    window.requestAnimationFrame(() => this.loop());
   }
   update(dt) {}
 
   draw(dt) {}
 
-  loop(timeStamp) {
+  loop() {
     const now = Date.now();
-    const dt = now - lastUpdate;
+    const dt = now - this.lastUpdate;
     this.lastUpdate = now;
     this.update(dt);
     this.draw(dt);
-    window.requestAnimationFrame(this.loop);
+    window.requestAnimationFrame(() => this.loop());
   }
 }
 
