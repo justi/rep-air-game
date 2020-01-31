@@ -6,11 +6,10 @@ class WorldEvent {
     this.type = type;
   }
 
-  run(state) {
+  run() {
     if (typeof this[this.type] == "function") {
-      return this[this.type](state);
+      this[this.type]();
     }
-    return state;
   }
 
   railroadsGainPopularity() {
