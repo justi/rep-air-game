@@ -1,6 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 input[type="checkbox"]:disabled {
   opacity: 0.2;
 }
 label {
   display: block;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.hud {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: inline-flex;
+  flex-direction: row;
+  padding: 10px;
+  background-color: rgb(139, 69, 19);
+  color: #fff;
+}
+
+.hud p {
+  margin-left: 10px;
+}
+
+.map {
+  width: 70vw;
+  height: 100vh;
+  background-color: rgb(0, 153, 255);
+}
+
+#events {
+  display: block;
+  background-color: rgb(182, 181, 168);
+  width: 30vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#events p {
+  padding: 10px;
+  border: 1px #000 solid;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30vw;
+  height: 30vh;
+  background: rgb(182,181,168);
+  background: linear-gradient(0deg, rgba(182,181,168,1) 0%, rgba(182,181,168,0) 100%);
 }

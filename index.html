@@ -8,35 +8,54 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <label
-      ><input type="checkbox" name="africa" id="africa" disabled />
-      Africa</label
-    >
-    <label><input type="checkbox" name="asia" id="asia" disabled /> Asia</label>
-    <label
-      ><input type="checkbox" name="europe" id="europe" disabled />
-      Europe</label
-    >
-    <label>
-      <input type="checkbox" name="north-america" id="north-america" disabled />
-      North America
-    </label>
-    <label>
-      <input type="checkbox" name="south-america" id="south-america" disabled />
-      South America
-    </label>
-    <label
-      ><input type="checkbox" name="antarctica" id="antarctica" disabled />
-      Antarctica</label
-    >
-    <label
-      ><input type="checkbox" name="australia" id="australia" disabled />
-      Australia</label
-    >
-    <p id="money"></p>
-    <p id="year"></p>
-    <p id="population"></p>
-    <p id="events"></p>
+    <div class="game">
+      <div class="map">
+        <div class="hud">
+          <p id="money"></p>
+          <p id="year"></p>
+          <p id="population"></p>
+        </div>
+        <label
+          ><input type="checkbox" name="africa" id="africa" disabled />
+          Africa</label
+        >
+        <label
+          ><input type="checkbox" name="asia" id="asia" disabled /> Asia</label
+        >
+        <label
+          ><input type="checkbox" name="europe" id="europe" disabled />
+          Europe</label
+        >
+        <label>
+          <input
+            type="checkbox"
+            name="north-america"
+            id="north-america"
+            disabled
+          />
+          North America
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="south-america"
+            id="south-america"
+            disabled
+          />
+          South America
+        </label>
+        <label
+          ><input type="checkbox" name="antarctica" id="antarctica" disabled />
+          Antarctica</label
+        >
+        <label
+          ><input type="checkbox" name="australia" id="australia" disabled />
+          Australia</label
+        >
+      </div>
+      <div id="events"></div>
+      <div class="overlay"></div>
+    </div>
     <script src="./src/pollution.js"></script>
     <script src="./src/moneyBubble.js"></script>
     <script src="./src/worldEvent.js"></script>

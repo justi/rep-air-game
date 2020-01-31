@@ -15,18 +15,18 @@ class WorldEvent {
 
   railroadsGainPopularity() {
     game.pollution.air += 4;
-    game.displayEvents.push("Koleje stają się popularnym środkiem transportu");
+    game.displayEvents.unshift("Koleje stają się popularnym środkiem transportu");
   }
 
   lampsGainPopularity() {
     game.pollution.water += 1;
     game.pollution.air += 1;
-    game.displayEvents.push("Oświetlenie płomieniem lamp zapewnia społeczeństwu światło");
+    game.displayEvents.unshift("Oświetlenie płomieniem lamp zapewnia społeczeństwu światło");
   }
 
   steamshipsGainPopularity() {
     game.pollution.water += 3;
     game.pollution.air += 1;
-    game.displayEvents.push("Transport morski opanowany przez statki parowe");
+    game.displayEvents.unshift("Transport morski opanowany przez statki parowe");
   }
 }

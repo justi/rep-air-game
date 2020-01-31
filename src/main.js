@@ -37,7 +37,7 @@ class Game {
   }
 
   updateDisplayEvents() {
-    this.eventsTag.innerHTML = this.displayEvents.join("<br />");
+    this.eventsTag.innerHTML = this.displayEvents.map(event => `<p>${event}</p>`).join("");
   }
 
   update() {
