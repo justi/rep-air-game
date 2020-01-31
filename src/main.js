@@ -2,23 +2,27 @@
 
 class Game {
   constructor() {
-    this.canvas = document.getElementById("game");
-    this.context = this.canvas.getContext("2d");
-    this.lastUpdate = Date.now();
-
-    window.requestAnimationFrame(() => this.loop());
+    this.money = 0;
+    this.year = 1800;
+    this.time = 1000;
+    this.moneyTag = document.getElementById("money");
+    this.eventGenerator = new EventGenerator();
+    this.events = this.eventGenerator.generateEvents();
+    this.bubbles = new Bubbles();
+    this.mainTimer = setTimeout(() => this.update(), this.time);
+    this.updateMoney();
+    console.log(this.events);
   }
-  update(dt) {}
 
-  draw(dt) {}
+  updateMoney() {
+    this.moneyTag.innerHTML = this.money;
+  }
 
-  loop() {
-    const now = Date.now();
-    const dt = now - this.lastUpdate;
-    this.lastUpdate = now;
-    this.update(dt);
-    this.draw(dt);
-    window.requestAnimationFrame(() => this.loop());
+  update() {
+    this.year++;
+    const event = this.events.find(event => event.year === this.year);
+    console.log(event);
+    this.mainTimer = setTimeout(() => this.update(), this.time);
   }
 }
 
