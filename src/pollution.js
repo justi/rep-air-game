@@ -21,9 +21,9 @@ class Pollution {
 
   increasePollution(year) {
     const yearlyIncrease = (year - 1800) * 0.001;
-    this.water += yearlyIncrease;
-    this.air += yearlyIncrease;
-    this.earth += yearlyIncrease;
+    this.water = this.water + yearlyIncrease;
+    this.air = this.air + yearlyIncrease;
+    this.earth = this.earth + yearlyIncrease;
   }
 
   getPopulationLeft() {
