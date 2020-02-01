@@ -2,7 +2,6 @@
 
 class CloseCoalMine {
   constructor () {
-    this.bought = false;
     this.minYear = 2050;
     this.price = 5000;
     this.name = "Zamknięcie kopalni węgla";
