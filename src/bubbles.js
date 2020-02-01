@@ -16,6 +16,7 @@ class Bubbles {
   enable(continentName, money) {
     const name = `bubble-${continentName}`;
     const bubble = this.bubbles.namedItem(name);
+    bubble.classList.add("show");
 
     if (this.timers[name]) {
       clearTimeout(this.timers[name]);
@@ -29,6 +30,7 @@ class Bubbles {
 
     this.timers[name] = setTimeout(() => {
       bubble.style.display = "none";
+      bubble.classList.remove("show");
       delete this.timers[name];
     }, 3000);
   }
@@ -40,6 +42,7 @@ class Bubbles {
     clearTimeout(this.timers[bubble.id]);
     delete this.timers[bubble.id];
     delete this.money[bubble.id];
+    bubble.classList.remove("show");
     game.updateMoney();
   }
 }

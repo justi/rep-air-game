@@ -187,3 +187,21 @@ label {
   cursor: pointer;
   font-size: 80px;
 }
+
+.map .bouble.show {
+  animation: show-money 0.3s ease;
+}
+
+@keyframes show-money {
+  0% {
+    font-size: 0px;
+  }
+
+  65% {
+    font-size: 140px;
+  }
+
+  100% {
+    font-size: 80px;
+  }
+}
