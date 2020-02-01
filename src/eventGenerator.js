@@ -2,9 +2,13 @@
 
 class EventGenerator {
   TYPES = [
+    'keroseneLampsGainPopularity',
     'railroadsGainPopularity',
-    'lampsGainPopularity',
-    'steamshipsGainPopularity'
+    'steamshipsGainPopularity',
+    'volcanicEruptionAtlanticOceanKillsCoralReef',
+    'volcanicEruptionPacificOceanKillsFaunaAndFlora',
+    'bicyclesGainPopularity',
+    'nuclearPlantExpodesEast'
   ];
 
   CONTINENTS = [
