@@ -17,7 +17,7 @@ class WorldEvent {
     game.pollution.air += 1;
     game.displayEvents.unshift({
       title: "Oświetlenie płomieniem lamp naftowych zapewnia społeczeństwu światło",
-      img: "lamp.png",
+      img: "kerosene_lamp.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt."
     });
@@ -27,7 +27,7 @@ class WorldEvent {
     game.pollution.air += 4;
     game.displayEvents.unshift({
       title: "Koleje stają się popularnym środkiem transportu",
-      img: "lamp.png",
+      img: "railroad.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt."
     });
@@ -38,7 +38,7 @@ class WorldEvent {
     game.pollution.air += 1;
     game.displayEvents.unshift({
       title: "Transport morski opanowany przez statki parowe",
-      img: "lamp.png",
+      img: "steamship.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt."
     });
@@ -50,19 +50,7 @@ class WorldEvent {
     game.pollution.air += 5;
     game.displayEvents.unshift({
       title: "Wybuch wulkanu na Oceanie Spokojnym niszczy rafę koralową",
-      img: "lamp.png",
-      desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt."
-    });
-  }
-
-  volcanicEruptionPacificOceanKillsFaunaAndFlora() {
-    game.pollution.water += 2;
-    game.pollution.land += 2;
-    game.pollution.air += 10;
-    game.displayEvents.unshift({
-      title: "Aktywność wulkaniczna na Oceanie Atlantyckim niszczy faunę i florę morską",
-      img: "lamp.png",
+      img: "volcano_eruption_sea.svg",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt."
     });
@@ -73,7 +61,7 @@ class WorldEvent {
     game.pollution.air += -6;
     game.displayEvents.unshift({
       title: "Rowery stają się popularnym środkiem transportu ",
-      img: "lamp.png",
+      img: "bicycle.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt."
     });
@@ -85,7 +73,20 @@ class WorldEvent {
     game.pollution.air += 5;
     game.displayEvents.unshift({
       title: "Wybuch reaktora jądrowego na Wschodzie",
-      img: "lamp.png",
+      img: "nuclear_plant.png",
+      desc:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt."
+    });
+  }
+
+  volcanicEruptionPacificOceanKillsFaunaAndFlora() {
+    game.pollution.water += 2;
+    game.pollution.land += 2;
+    game.pollution.air += 10;
+    game.minYear = 1999;
+    game.displayEvents.unshift({
+      title: "Aktywność wulkaniczna na Oceanie Atlantyckim niszczy faunę i florę morską",
+      img: "volcano_eruption.jpg",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt."
     });
