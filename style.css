@@ -39,15 +39,62 @@ label {
 
 #events {
   display: block;
-  background-color: rgb(182, 181, 168);
+  background-color: #f3dbbc;
   width: 30vw;
   height: 100vh;
   overflow: hidden;
+  color: #473526;
 }
 
-#events p {
+
+#events .events-header {
+  margin: 20px 20px 0;
+  position: relative;
+}
+
+#events .events-header hr {
+  background: #473526;
+  margin-bottom: 3px;
+  border: 0;
+}
+
+#events .events-header hr.small {
+  height: 2px;
+}
+
+#events .events-header hr.big {
+  height: 4px;
+} 
+
+#events .events-header h1 {
+  text-align: center;
+  font-size: 48px;
+}
+
+#events .events-header #events-year {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  font-size: 16px;
+}
+
+#events .event-details {
+  border-bottom: 1px solid #473526;
+  margin: 0 10px 10px;
   padding: 10px;
-  border: 1px #000 solid;
+}
+
+#events p.event-title {
+  font-size: 30px;
+}
+
+#events img.event-img {
+  width: 100%;
+  margin: 10px 0;
+}
+
+#events p.event-desc {
+  font-size: 16px;
 }
 
 .overlay {
@@ -56,6 +103,11 @@ label {
   right: 0;
   width: 30vw;
   height: 30vh;
-  background: rgb(182,181,168);
-  background: linear-gradient(0deg, rgba(182,181,168,1) 0%, rgba(182,181,168,0) 100%);
+  background: #f3dbbc;
+  background: linear-gradient(
+    0deg,
+    #f3dbbc 0%,
+    #f3dbbc 30%,
+    rgba(182, 181, 168, 0) 100%
+  );
 }

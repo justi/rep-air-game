@@ -8,8 +8,9 @@ class Game {
     this.time = 1000;
     this.moneyTag = document.getElementById("money");
     this.yearTag = document.getElementById("year");
+    this.newspaperYearTag = document.getElementById("events-year");
     this.populationTag = document.getElementById("population");
-    this.eventsTag = document.getElementById("events");
+    this.eventsTag = document.getElementById("events-feed");
     this.bubbles = new Bubbles();
     this.pollution = new Pollution();
     this.eventGenerator = new EventGenerator();
@@ -30,6 +31,7 @@ class Game {
 
   updateYear() {
     this.yearTag.innerHTML = this.year;
+    this.newspaperYearTag.innerHTML = `A.D. ${this.year}`;
   }
 
   updatePopulation() {
@@ -37,7 +39,12 @@ class Game {
   }
 
   updateDisplayEvents() {
-    this.eventsTag.innerHTML = this.displayEvents.map(event => `<p>${event}</p>`).join("");
+    this.eventsTag.innerHTML = this.displayEvents
+      .map(
+        event =>
+          `<div class="event-details"><p class="event-title">${event.title}</p><img class="event-img" src="./src/img/${event.img}" /><p class="event-desc">${event.desc}</p></div>`
+      )
+      .join("");
   }
 
   update() {
