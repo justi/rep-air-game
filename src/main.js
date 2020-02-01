@@ -7,6 +7,7 @@ class Game {
     this.maxYear = 2100;
     this.time = 1000;
     this.moneyTag = document.getElementById("money");
+    this.mapTag = document.getElementsByClassName("map")[0];
     this.newspaperYearTag = document.getElementById("events-year");
     this.populationTag = document.getElementById("population");
     this.eventsTag = document.getElementById("events-feed");
@@ -89,7 +90,7 @@ class Game {
   }
 
   pollutionHue(pollution) {
-    return Math.max(-90, 90-pollution);
+    return Math.max(-90, 90-(2*pollution));
   }
 
   updatePollution() {
@@ -98,6 +99,7 @@ class Game {
     const earth = this.percentFormatter.format(Math.max(0, this.pollution.earth));
     this.pollutionWaterTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(this.pollution.water)}deg)`;
     this.pollutionWaterTag.innerText = `💡 ${water}`
+    this.mapTag.style.filter = `hue-rotate(${Math.min(0, this.pollutionHue(this.pollution.water))}deg)`;
     this.pollutionAirTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(this.pollution.air)}deg)`;
     this.pollutionAirTag.innerText = `💡 ${air}`
     this.pollutionEarthTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(this.pollution.earth)}deg)`;

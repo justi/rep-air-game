@@ -226,12 +226,12 @@ label {
 #money {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 #pollution-water, #pollution-air, #pollution-earth {
   font-family: 'Playfair Display', serif;
-  font-size: 50px;
+  font-size: 25px;
   filter: sepia(1) hue-rotate(90deg);
-  width: 200px;
+  width: 100px;
 }
