@@ -29,7 +29,7 @@ class Game {
     this.updatePopulation();
     this.updateDisplayEvents();
     this.modifierTypes = [
-      "CloseCoalMine",
+      "CloseCoalMines",
       "LimitCO2EmissionsInEU",
       "ModernOceanCleaningSystem"
     ];

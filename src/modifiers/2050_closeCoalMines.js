@@ -1,6 +1,6 @@
 'use strict';
 
-class CloseCoalMine {
+class CloseCoalMines {
   constructor () {
     this.minYear = 2025;
     this.price = 50;
