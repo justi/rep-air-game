@@ -3,12 +3,24 @@
 class EventGenerator {
   TYPES = {
     'keroseneLampsGainPopularity': 1800,
+    'firstRailroadInvented': 1804,
     'railroadsGainPopularity': 1825,
+    'firstElectricEngineDiscovered': 1837,
     'steamshipsGainPopularity': 1860,
     'volcanicEruptionAtlanticOceanKillsCoralReef': 1890,
     'volcanicEruptionPacificOceanKillsFaunaAndFlora': 1990,
+    'industrializationRises': 1920,
+    'carsGainPopularity': 1930,
     'bicyclesGainPopularity': 1950,
-    'nuclearPlantExpodesEast': 1986
+    'industrializationRisesMore': 1955,
+    'nuclearPlantsGainPopulatiry': 1975,
+    'nuclearPlantExplodesEast': 1986,
+    'carsGainPopularityMore': 1995,
+    'factoriesUseOwnWindmills': 2005,
+    'militaryUsesAirships': 2030,
+    'fusionReactorsGainPopularity': 2040,
+    'airplanesGainPopularity': 2055,
+    'carsGainPopularityMax': 2065
   };
 
   CONTINENTS = [
