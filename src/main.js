@@ -7,12 +7,13 @@ class Game {
     this.maxYear = 2100;
     this.time = 1000;
     this.moneyTag = document.getElementById("money");
-    this.yearTag = document.getElementById("year");
     this.newspaperYearTag = document.getElementById("events-year");
     this.populationTag = document.getElementById("population");
     this.eventsTag = document.getElementById("events-feed");
     this.modifiersTag = document.getElementById("modifiers");
-    this.pollutionTag = document.getElementById("pollution");
+    this.pollutionWaterTag = document.getElementById("pollution-water");
+    this.pollutionAirTag = document.getElementById("pollution-air");
+    this.pollutionEarthTag = document.getElementById("pollution-earth");
     this.bubbles = new Bubbles();
     this.pollution = new Pollution();
     this.eventGenerator = new EventGenerator();
@@ -22,7 +23,8 @@ class Game {
     this.mainTimer = setTimeout(() => this.update(), this.time);
     this.percentFormatter = new Intl.NumberFormat("en", {
       style: "unit",
-      unit: "percent"
+      unit: "percent",
+      maximumFractionDigits:0
     });
     this.updateMoney();
     this.updateYear();
@@ -69,11 +71,14 @@ class Game {
   }
 
   updateMoney() {
-    this.moneyTag.innerHTML = this.money;
+    if(this.money === 0) {
+      this.moneyTag.innerHTML = `$${this.money}`;
+    } else {
+      this.moneyTag.innerHTML = `$${this.money}.000.000`;
+    }
   }
 
   updateYear() {
-    this.yearTag.innerHTML = this.year;
     this.newspaperYearTag.innerHTML = `A.D. ${this.year}`;
   }
 
@@ -83,11 +88,20 @@ class Game {
     );
   }
 
+  pollutionHue(pollution) {
+    return Math.max(-90, 90-pollution);
+  }
+
   updatePollution() {
-    const water = this.percentFormatter.format(this.pollution.water);
-    const air = this.percentFormatter.format(this.pollution.air);
-    const earth = this.percentFormatter.format(this.pollution.earth);
-    this.pollutionTag.innerHTML = `Water: ${water} Air: ${air} Earth: ${earth}`;
+    const water = this.percentFormatter.format(Math.max(0, this.pollution.water));
+    const air = this.percentFormatter.format(Math.max(0, this.pollution.air));
+    const earth = this.percentFormatter.format(Math.max(0, this.pollution.earth));
+    this.pollutionWaterTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(this.pollution.water)}deg)`;
+    this.pollutionWaterTag.innerText = `💡 ${water}`
+    this.pollutionAirTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(this.pollution.air)}deg)`;
+    this.pollutionAirTag.innerText = `💡 ${air}`
+    this.pollutionEarthTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(this.pollution.earth)}deg)`;
+    this.pollutionEarthTag.innerText = `💡 ${earth}`
   }
 
   updateDisplayEvents() {
