@@ -31,10 +31,7 @@
                 y2="100%"
               >
                 <stop offset="0%" style="stop-color:#ffc500;stop-opacity:1" />
-                <stop
-                  offset="100%"
-                  style="stop-color:#c21500;stop-opacity:1"
-                />
+                <stop offset="100%" style="stop-color:#c21500;stop-opacity:1" />
               </linearGradient>
             </defs>
             <g>
@@ -162,25 +159,23 @@
                 stroke="#000"
                 fill="#fff"
               />
-              <g>
-                <circle
-                  id="bubble-north-america"
-                  class="bouble"
-                  cx="140"
-                  cy="100"
-                />
-              </g>
-              <circle
-                id="bubble-south-america"
-                class="bouble"
-                cx="250"
-                cy="340"
-              />
-              <circle id="bubble-europe" class="bouble" cx="500" cy="100" />
-              <circle id="bubble-asia" class="bouble" cx="700" cy="100" />
-              <circle id="bubble-africa" class="bouble" cx="480" cy="240" />
-              <circle id="bubble-australia" class="bouble" cx="860" cy="400" />
-              <circle id="bubble-antarctica" class="bouble" cx="500" cy="560" />
+              <text id="bubble-north-america" class="bouble" x="140" y="100">
+                💵
+              </text>
+              <text id="bubble-south-america" class="bouble" x="250" y="340">
+                💵
+              </text>
+              <text id="bubble-europe" class="bouble" x="500" y="100">💵</text>
+              <text id="bubble-asia" class="bouble" x="700" y="100">💵</text>
+              <text id="bubble-africa" class="bouble" x="480" y="240">
+                💵
+              </text>
+              <text id="bubble-australia" class="bouble" x="860" y="400">
+                💵
+              </text>
+              <text id="bubble-antarctica" class="bouble" x="500" y="560">
+                💵
+              </text>
             </g>
           </svg>
         </div>
@@ -195,8 +190,8 @@
           <hr class="small" />
         </div>
         <div id="events-feed"></div>
+        <div class="overlay"></div>
       </div>
-      <div class="overlay"></div>
       <div id="modifiers"></div>
     </div>
     <script src="./src/modifiers/1945_noRestrictionAboutWaterSewege.js"></script>

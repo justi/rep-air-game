@@ -4,12 +4,12 @@
   padding: 0;
 }
 
-input[type="checkbox"]:disabled {
-  opacity: 0.2;
+body {
+  overflow: hidden;
 }
+
 label {
-  display: block;
-  position: absolute;
+  margin-right: 10px;
 }
 
 .game {
@@ -20,12 +20,16 @@ label {
 .hud {
   top: 0;
   left: 0;
+  width: 70vw;
   position: absolute;
   display: inline-flex;
   flex-direction: row;
-  padding: 10px;
-  background-color: rgb(139, 69, 19);
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
+  z-index: 100;
+  align-content: space-around;
+  justify-content: space-around;
 }
 
 #modifiers {
@@ -33,10 +37,13 @@ label {
   left: 0;
   position: absolute;
   display: inline-flex;
+  align-content: center;
+  /* justify-content: center; */
   flex-direction: row;
   padding: 10px;
-  background-color: rgb(139, 69, 19);
+  background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
+  width: 70vw;
 }
 
 .hud p {
@@ -98,6 +105,7 @@ label {
   height: 100vh;
   overflow: hidden;
   color: #473526;
+  z-index: 200;
 }
 
 #events .events-header {
@@ -176,7 +184,6 @@ label {
 
 .map .bouble {
   display: none;
-  r: 40;
-  fill: url(#bubble-gradient);
   cursor: pointer;
+  font-size: 80px;
 }

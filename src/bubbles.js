@@ -1,7 +1,7 @@
 "use strict";
 
 class Bubbles {
-  bubbles = document.getElementsByTagName("circle");
+  bubbles = document.getElementsByTagName("text");
   timers = {};
   money = {};
   constructor() {
