@@ -227,6 +227,7 @@ label {
   font-family: "Playfair Display", serif;
   font-weight: 900;
   font-size: 40px;
+  width: 500px;
 }
 
 #pollution-water, #pollution-air, #pollution-earth, #population {
@@ -315,4 +316,17 @@ label {
   100% {
     transform: translate(0%, 0%) rotate(0) scale(1);
   }
+}
+
+.modifier-image {
+  width: 100px;
+  height: 100px;
+}
+
+#modifiers input[type=checkbox] {
+  visibility: hidden;
+}
+
+input:disabled+label {
+  opacity: 0.5;
 }

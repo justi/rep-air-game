@@ -3,7 +3,8 @@
 class UseBicycles {
   constructor () {
     this.minYear = 1960;
-    this.price = 15;
+    this.minYear = 1801;
+    this.price = 1;
     this.name = "Nowa kampania \"rowerem do pracy\"";
     this.used = false;
   }

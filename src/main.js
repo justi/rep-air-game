@@ -2,7 +2,7 @@
 
 class Game {
   constructor() {
-    this.money = 0;
+    this.money = 1;
     this.year = 1800;
     this.maxYear = 2100;
     this.time = 1000;
@@ -35,7 +35,11 @@ class Game {
     this.modifierTypes = [
       "CloseCoalMines",
       "LimitCO2EmissionsInEU",
-      "ModernOceanCleaningSystem"
+      "ModernOceanCleaningSystem",
+      "UseBicycles",
+      "UseScientificResearch",
+      "PlantForest",
+      "LimitCO2EmissionsInAsia",
     ];
     this.modifiers = [];
 
@@ -57,13 +61,15 @@ class Game {
           modifierTag.disabled = true;
           modifierObj.run();
           modifierObj.used = true;
+          this.updateMoney();
         }
       });
 
       let modifierLabelTag = document.createElement("label");
-      modifierLabelTag.innerHTML = modifierObj.name;
+      modifierLabelTag.innerHTML = `<img class="modifier-image" src="src/img/${modifier}.png" />`;
+      modifierLabelTag.htmlFor = modifier;
 
-      modifierLabelTag.appendChild(modifierTag);
+      this.modifiersTag.appendChild(modifierTag);
       this.modifiersTag.appendChild(modifierLabelTag);
       return {
         modifierObj: modifierObj,
