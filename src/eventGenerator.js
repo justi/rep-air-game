@@ -33,7 +33,7 @@ class EventGenerator {
   generateMoneyBubbles(startYear = 1805, endYear = 2100, maxEvents = 120) {
     let bubbles = [];
     for (let i = 0; i < maxEvents; ++i) {
-      bubbles.push(new MoneyBubble(this.getRandomInt(startYear, endYear), this.getRandomItem(this.CONTINENTS), this.getRandomInt(1, 2)));
+      bubbles.push(new MoneyBubble(this.getRandomInt(startYear, endYear), this.getRandomItem(this.CONTINENTS), 1));
     }
     return bubbles.sort((a, b) => a.year - b.year);
   }

@@ -68,6 +68,7 @@ class Game {
 
       let modifierLabelTag = document.createElement("label");
       modifierLabelTag.innerHTML = `<img class="modifier-image" src="src/img/${modifier}.png" />`;
+      modifierLabelTag.innerHTML += `<p class="modifier-description">Year: ${modifierObj.minYear}, Price: $${modifierObj.price}M</p>`
       modifierLabelTag.htmlFor = modifier;
 
       this.modifiersTag.appendChild(modifierTag);
