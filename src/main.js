@@ -112,6 +112,12 @@ class Game {
   }
 
   update() {
+    if (this.isGameOver()) {
+      return;
+    }
+    if (this.isGameComplete()) {
+      return;
+    }
     this.year++;
     const event = this.events.find(event => event.year === this.year);
     const bubble = this.moneyBubbles.find(bubble => bubble.year === this.year);
@@ -132,6 +138,14 @@ class Game {
     this.updateDisplayEvents();
     this.updateModifiers();
     this.updatePollution();
+  }
+
+  isGameComplete() {
+    return this.pollution.population !== 0 && this.year === 2100;
+  }
+
+  isGameOver() {
+    return this.pollution.population === 0
   }
 }
 
