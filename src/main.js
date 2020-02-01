@@ -11,6 +11,7 @@ class Game {
     this.newspaperYearTag = document.getElementById("events-year");
     this.populationTag = document.getElementById("population");
     this.eventsTag = document.getElementById("events-feed");
+    this.modifiersTag = document.getElementById('modifiers');
     this.bubbles = new Bubbles();
     this.pollution = new Pollution();
     this.eventGenerator = new EventGenerator();
@@ -22,7 +23,39 @@ class Game {
     this.updateYear();
     this.updatePopulation();
     this.updateDisplayEvents();
+    this.modifierTypes = [
+      'CloseCoalMine',
+      'LimitCO2EmissionsInEU',
+      'ModernOceanCleaningSystem'
+    ];
+    this.modifiers = [];
+
+    this.initModifiers();
     console.log(this.events, this.moneyBubbles);
+  }
+
+  initModifiers() {
+    this.modifiers = this.modifierTypes.map((modifier) => {
+      let modifierObj = eval('new ' + modifier + '();')
+
+      let modifierTag = document.createElement('input');
+      modifierTag.type = "checkbox";
+      modifierTag.name = modifier;
+      modifierTag.id = modifier;
+      modifierTag.disabled = true;
+
+      let modifierLabelTag = document.createElement('label')
+      modifierLabelTag.htmlFor = modifier;
+      modifierLabelTag.innerHTML = modifierObj.name;
+
+      this.modifiersTag.appendChild(modifierTag);
+      this.modifiersTag.appendChild(modifierLabelTag);
+      return {
+        modifierObj: modifierObj,
+        modifierTag: modifierTag,
+        used: false
+      }
+    });
   }
 
   updateMoney() {
@@ -47,6 +80,14 @@ class Game {
       .join("");
   }
 
+  updateModifiers() {
+    this.modifiers.forEach((modifier) => {
+      let obj = modifier.modifierObj;
+      let tag = modifier.modifierTag;
+      tag.disabled = !(obj.minYear <= this.year && obj.price <= this.money && !modifier.used)
+    });
+  }
+
   update() {
     this.year++;
     const event = this.events.find(event => event.year === this.year);
@@ -66,6 +107,7 @@ class Game {
     this.updateYear();
     this.updatePopulation();
     this.updateDisplayEvents();
+    this.updateModifiers();
   }
 }
 
