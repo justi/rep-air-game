@@ -2,9 +2,8 @@
 
 class ModernOceanCleaningSystem {
   constructor () {
-    this.bought = false;
     this.minYear = 2021;
-    this.price = 10000;
+    this.price = 95;
     this.name = "Nowoczesny system oczyszczania oceanów";
     this.used = false;
   }
