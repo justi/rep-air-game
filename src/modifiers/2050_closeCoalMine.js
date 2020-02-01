@@ -7,6 +7,7 @@ class CloseCoalMine {
     this.price = 5000;
     this.price = 0;
     this.name = "Zamknięcie kopalni węgla";
+    this.used = false;
   }
 
   run () {

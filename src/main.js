@@ -12,6 +12,7 @@ class Game {
     this.populationTag = document.getElementById("population");
     this.eventsTag = document.getElementById("events-feed");
     this.modifiersTag = document.getElementById('modifiers');
+    this.pollutionTag = document.getElementById('pollution');
     this.bubbles = new Bubbles();
     this.pollution = new Pollution();
     this.eventGenerator = new EventGenerator();
@@ -19,6 +20,7 @@ class Game {
     this.displayEvents = [];
     this.moneyBubbles = this.eventGenerator.generateMoneyBubbles();
     this.mainTimer = setTimeout(() => this.update(), this.time);
+    this.percentFormatter = new Intl.NumberFormat('en', {style: 'unit', unit: 'percent'});
     this.updateMoney();
     this.updateYear();
     this.updatePopulation();
@@ -43,6 +45,13 @@ class Game {
       modifierTag.name = modifier;
       modifierTag.id = modifier;
       modifierTag.disabled = true;
+      modifierTag.addEventListener('change', () => {
+        if (modifierTag.checked) {
+          modifierTag.disabled = true;
+          modifierObj.run();
+          modifierObj.used = true;
+        }
+      });
 
       let modifierLabelTag = document.createElement('label')
       modifierLabelTag.htmlFor = modifier;
@@ -53,7 +62,6 @@ class Game {
       return {
         modifierObj: modifierObj,
         modifierTag: modifierTag,
-        used: false
       }
     });
   }
@@ -68,7 +76,14 @@ class Game {
   }
 
   updatePopulation() {
-    this.populationTag.innerHTML = this.pollution.getPopulationLeft();
+    this.populationTag.innerHTML = this.percentFormatter.format(this.pollution.getPopulationLeft());
+  }
+
+  updatePollution() {
+    const water = this.percentFormatter.format(this.pollution.water);
+    const air = this.percentFormatter.format(this.pollution.air);
+    const earth = this.percentFormatter.format(this.pollution.earth);
+    this.pollutionTag.innerHTML = `Water: ${water} Air: ${air} Earth: ${earth}`
   }
 
   updateDisplayEvents() {
@@ -84,7 +99,7 @@ class Game {
     this.modifiers.forEach((modifier) => {
       let obj = modifier.modifierObj;
       let tag = modifier.modifierTag;
-      tag.disabled = !(obj.minYear <= this.year && obj.price <= this.money && !modifier.used)
+      tag.disabled = !(obj.minYear <= this.year && obj.price <= this.money && !obj.used)
     });
   }
 
@@ -108,6 +123,7 @@ class Game {
     this.updatePopulation();
     this.updateDisplayEvents();
     this.updateModifiers();
+    this.updatePollution();
   }
 }
 

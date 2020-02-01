@@ -16,11 +16,11 @@ class Pollution {
   }
 
   killRate (year) {
-    return (year * this.difficulty)*(this.water + this.air + this.earth);
+    return (year * this.difficulty)*Math.max(0, this.water + this.air + this.earth);
   }
 
   increasePollution(year) {
-    const yearlyIncrease = (year - 1800) * 0.01;
+    const yearlyIncrease = (year - 1800) * 0.001;
     this.water += yearlyIncrease;
     this.air += yearlyIncrease;
     this.earth += yearlyIncrease;

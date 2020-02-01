@@ -5,6 +5,7 @@ class LimitCO2EmissionsInAsia {
     this.minYear = 2026;
     this.price = 12000;
     this.name = "Nałożenie limitów emisji CO2 na kraje azjatyckie";
+    this.used = false;
   }
 
   run () {

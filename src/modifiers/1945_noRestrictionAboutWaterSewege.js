@@ -5,6 +5,7 @@ class NoRestrictionAboutWaterSewege {
     this.minYear = 1945;
     this.price = 10;
     this.name = "Brak regulacji dotyczących ścieków";
+    this.used = false;
   }
 
   run () {
