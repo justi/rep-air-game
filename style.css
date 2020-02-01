@@ -229,10 +229,8 @@ label {
   font-size: 40px;
 }
 
-#pollution-water,
-#pollution-air,
-#pollution-earth {
-  font-family: "Playfair Display", serif;
+#pollution-water, #pollution-air, #pollution-earth, #population {
+  font-family: 'Playfair Display', serif;
   font-size: 25px;
   filter: sepia(1) hue-rotate(90deg);
   width: 100px;

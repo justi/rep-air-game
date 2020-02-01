@@ -85,7 +85,7 @@ class Game {
   }
 
   updatePopulation() {
-    this.populationTag.innerHTML = this.percentFormatter.format(
+    this.populationTag.innerHTML = '👤 ' + this.percentFormatter.format(
       this.pollution.getPopulationLeft()
     );
   }
@@ -105,7 +105,7 @@ class Game {
     this.pollutionWaterTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(
       this.pollution.water
     )}deg)`;
-    this.pollutionWaterTag.innerText = `💡 ${water}`;
+    this.pollutionWaterTag.innerText = `💧 ${water}`;
     this.mapTag.style.filter = `hue-rotate(${Math.min(
       0,
       this.pollutionHue(this.pollution.water)
@@ -113,11 +113,11 @@ class Game {
     this.pollutionAirTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(
       this.pollution.air
     )}deg)`;
-    this.pollutionAirTag.innerText = `💡 ${air}`;
+    this.pollutionAirTag.innerText = `☁️ ${air}`;
     this.pollutionEarthTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(
       this.pollution.earth
     )}deg)`;
-    this.pollutionEarthTag.innerText = `💡 ${earth}`;
+    this.pollutionEarthTag.innerText = `🌳 ${earth}`;
   }
 
   updateDisplayEvents() {
