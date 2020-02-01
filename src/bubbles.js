@@ -29,20 +29,29 @@ class Bubbles {
     console.log(this.money);
 
     this.timers[name] = setTimeout(() => {
-      bubble.style.display = "none";
       bubble.classList.remove("show");
+      bubble.classList.add("hide");
       delete this.timers[name];
+      this.hide(bubble);
     }, 3000);
   }
 
   clicked(bubble) {
-    bubble.style.display = "none";
     console.log(this.money[bubble.id]);
     game.money += this.money[bubble.id];
     clearTimeout(this.timers[bubble.id]);
     delete this.timers[bubble.id];
     delete this.money[bubble.id];
     bubble.classList.remove("show");
+    bubble.classList.add("hide");
+    this.hide(bubble);
     game.updateMoney();
+  }
+
+  hide(bubble) {
+    setTimeout(() => {
+      bubble.style.display = "none";
+      bubble.classList.remove("hide");
+    }, 300);
   }
 }

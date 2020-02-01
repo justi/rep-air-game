@@ -185,11 +185,17 @@ label {
 .map .bouble {
   display: none;
   cursor: pointer;
-  font-size: 80px;
+  text-align: center;
 }
 
 .map .bouble.show {
+  font-size: 80px;
   animation: show-money 0.3s ease;
+}
+
+.map .bouble.hide {
+  font-size: 0px;
+  animation: hide-money 0.3s ease;
 }
 
 @keyframes show-money {
@@ -203,5 +209,15 @@ label {
 
   100% {
     font-size: 80px;
+  }
+}
+
+@keyframes hide-money {
+  0% {
+    font-size: 80px;
+  }
+
+  100% {
+    font-size: 0px;
   }
 }
