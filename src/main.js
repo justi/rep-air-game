@@ -15,6 +15,7 @@ class Game {
     this.pollutionWaterTag = document.getElementById("pollution-water");
     this.pollutionAirTag = document.getElementById("pollution-air");
     this.pollutionEarthTag = document.getElementById("pollution-earth");
+    this.continentsTags = Array.prototype.slice.call(document.getElementsByClassName("continent"));
     this.gameOverScreen = document.getElementById("game-over");
     this.bubbles = new Bubbles();
     this.pollution = new Pollution();
@@ -123,6 +124,9 @@ class Game {
     this.pollutionEarthTag.style.filter = `sepia(1) hue-rotate(${this.pollutionHue(
       this.pollution.earth
     )}deg)`;
+    this.continentsTags.forEach(continent => {
+      continent.style.fill = `hsl(${Math.max(0, 160-(2*this.pollution.earth))}, 33%, 46%)`;
+    });
     this.pollutionEarthTag.innerText = `🌳 ${earth}`;
   }
 
@@ -175,6 +179,14 @@ class Game {
     this.updateDisplayEvents();
     this.updateModifiers();
     this.updatePollution();
+    if (this.year === 2020) {
+      this.brexit();
+    }
+  }
+
+  brexit() {
+    let gb = document.getElementById("svg_22").remove();
+    gb.parentNode.removeChild(gb);
   }
 
   isGameComplete() {

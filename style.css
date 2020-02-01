@@ -330,3 +330,7 @@ label {
 input:disabled+label {
   opacity: 0.5;
 }
+
+.continent {
+  fill: hsl(160, 33%, 46%);
+}
