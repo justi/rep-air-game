@@ -149,7 +149,7 @@ class WorldEvent {
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt."
     });
-  },
+  }
 
   industrializationRisesMore() {
     game.pollution.water += 5;
