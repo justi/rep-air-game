@@ -69,32 +69,32 @@ label {
 }
 
 .map .bg img.bg-first {
-  transform: skew(-5deg, -3deg);
+  transform: skew(-5deg, -3deg) translate(-10%);
   animation: 10s infinite alternate bg-first;
 }
 
 .map .bg img.bg-second {
   animation: 10s infinite alternate bg-second;
-  transform: skew(5deg, 3deg);
+  transform: skew(5deg, 3deg) translate(-10%);
 }
 
 @keyframes bg-first {
   from {
-    transform: skew(-5deg, -3deg);
+    transform: skew(-5deg, -3deg)  translate(-10%);
   }
 
   to {
-    transform: skew(5deg, 3deg);
+    transform: skew(5deg, 3deg)  translate(-10%);
   }
 }
 
 @keyframes bg-second {
   from {
-    transform: skew(5deg, 3deg);
+    transform: skew(5deg, 3deg)  translate(-10%);
   }
 
   to {
-    transform: skew(-5deg, -3deg);
+    transform: skew(-5deg, -3deg)  translate(-10%);
   }
 }
 
