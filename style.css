@@ -35,6 +35,48 @@ label {
   width: 70vw;
   height: 100vh;
   background-color: rgb(0, 153, 255);
+  overflow: hidden;
+}
+
+.map .bg {
+  position: relative;
+}
+
+.map .bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+}
+
+.map .bg img.bg-first {
+  transform: skew(-5deg, -3deg);
+  animation: 10s infinite alternate bg-first;
+}
+
+.map .bg img.bg-second {
+  animation: 10s infinite alternate bg-second;
+  transform: skew(5deg, 3deg);
+}
+
+@keyframes bg-first {
+  from {
+    transform: skew(-5deg, -3deg);
+  }
+
+  to {
+    transform: skew(5deg, 3deg);
+  }
+}
+
+@keyframes bg-second {
+  from {
+    transform: skew(5deg, 3deg);
+  }
+
+  to {
+    transform: skew(-5deg, -3deg);
+  }
 }
 
 #events {
@@ -45,7 +87,6 @@ label {
   overflow: hidden;
   color: #473526;
 }
-
 
 #events .events-header {
   margin: 20px 20px 0;
@@ -64,7 +105,7 @@ label {
 
 #events .events-header hr.big {
   height: 4px;
-} 
+}
 
 #events .events-header h1 {
   text-align: center;
