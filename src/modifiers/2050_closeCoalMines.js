@@ -1,16 +1,11 @@
-'use strict';
+"use strict";
 
-class CloseCoalMines {
-  constructor () {
+class CloseCoalMines extends Modifier {
+  constructor() {
+    super();
     this.minYear = 2025;
     this.price = 50;
     this.name = "Ostateczne zamykanie kopalni węgla";
-    this.used = false;
-  }
-
-  run () {
-    game.pollution.land -= 1;
-    game.pollution.air -= 8;
-    game.money -= this.price;
+    this.modifiers({ land: -1, air: -8 });
   }
 }

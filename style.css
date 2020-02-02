@@ -139,6 +139,26 @@ label {
   font-size: 16px;
 }
 
+#events .event-pollution {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#events .event-pollution p {
+  font-size: 24px;
+}
+
+#events .event-pollution-increase,
+.modifier-pollution-increase {
+  color: #c42b16;
+}
+
+#events .event-pollution-decrease,
+.modifier-pollution-decrease {
+  color: #39bb19;
+}
+
 #events .event-details {
   border-bottom: 1px solid #473526;
   margin: 0 10px 10px;
@@ -322,6 +342,24 @@ label {
   100% {
     transform: translate(0%, 0%) rotate(0) scale(1);
   }
+}
+
+#modifiers {
+  display: flex;
+  justify-content: space-between;
+}
+
+#modifiers label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modifier-pollution {
+  width: 100%;
+  display: flex;
+  justify-content: space-between ;
 }
 
 .modifier-image {

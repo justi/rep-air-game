@@ -1,16 +1,11 @@
-'use strict';
+"use strict";
 
-class NoRestrictionAboutWaterSewege {
-  constructor () {
+class NoRestrictionAboutWaterSewege extends Modifier {
+  constructor() {
+    super();
     this.minYear = 1945;
     this.price = 0;
     this.name = "Brak regulacji dotyczących ścieków";
-    this.used = false;
-  }
-
-  run () {
-    game.pollution.water += 15;
-    game.pollution.land += -5;
-    game.money -= this.price;
+    this.modifiers({ water: 15, land: -5 });
   }
 }

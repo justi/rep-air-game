@@ -15,7 +15,9 @@ class Game {
     this.pollutionWaterTag = document.getElementById("pollution-water");
     this.pollutionAirTag = document.getElementById("pollution-air");
     this.pollutionEarthTag = document.getElementById("pollution-earth");
-    this.continentsTags = Array.prototype.slice.call(document.getElementsByClassName("continent"));
+    this.continentsTags = Array.prototype.slice.call(
+      document.getElementsByClassName("continent")
+    );
     this.gameOverScreen = document.getElementById("game-over");
     this.bubbles = new Bubbles();
     this.pollution = new Pollution();
@@ -40,7 +42,7 @@ class Game {
       "UseBicycles",
       "UseScientificResearch",
       "PlantForest",
-      "LimitCO2EmissionsInAsia",
+      "LimitCO2EmissionsInAsia"
     ];
     this.modifiers = [];
 
@@ -51,7 +53,6 @@ class Game {
   initModifiers() {
     this.modifiers = this.modifierTypes.map(modifier => {
       let modifierObj = eval("new " + modifier + "();");
-
       let modifierTag = document.createElement("input");
       modifierTag.type = "checkbox";
       modifierTag.name = modifier;
@@ -67,8 +68,28 @@ class Game {
       });
 
       let modifierLabelTag = document.createElement("label");
-      modifierLabelTag.innerHTML = `<img class="modifier-image" src="src/img/${modifier}.png" />`;
-      modifierLabelTag.innerHTML += `<p class="modifier-description">Year: ${modifierObj.minYear}, Price: $${modifierObj.price}M</p>`
+      modifierLabelTag.innerHTML = ` <img class="modifier-image" src="src/img/${modifier}.png" />
+                                      <div class="modifier-pollution">
+                                        <p class="${this.setPollutionClass(
+                                          "modifier-pollution",
+                                          modifierObj.modifier.water
+                                        )}">💧${this.setPollutionChar(
+        modifierObj.modifier.water
+      )}${modifierObj.modifier.water}</p>
+                                        <p class="${this.setPollutionClass(
+                                          "modifier-pollution",
+                                          modifierObj.modifier.air
+                                        )}">☁️${this.setPollutionChar(
+        modifierObj.modifier.air
+      )}${modifierObj.modifier.air}</p>
+                                        <p class="${this.setPollutionClass(
+                                          "modifier-pollution",
+                                          modifierObj.modifier.land
+                                        )}">🌳${this.setPollutionChar(
+        modifierObj.modifier.land
+      )}${modifierObj.modifier.land}</p>
+                                      </div>`;
+      modifierLabelTag.innerHTML += `<p class="modifier-description">Year: ${modifierObj.minYear}<br />Price: $${modifierObj.price}M</p>`;
       modifierLabelTag.htmlFor = modifier;
 
       this.modifiersTag.appendChild(modifierTag);
@@ -93,9 +114,8 @@ class Game {
   }
 
   updatePopulation() {
-    this.populationTag.innerHTML = '👤 ' + this.percentFormatter.format(
-      this.pollution.getPopulationLeft()
-    );
+    this.populationTag.innerHTML =
+      "👤 " + this.percentFormatter.format(this.pollution.getPopulationLeft());
   }
 
   pollutionHue(pollution) {
@@ -126,16 +146,61 @@ class Game {
       this.pollution.earth
     )}deg)`;
     this.continentsTags.forEach(continent => {
-      continent.style.fill = `hsl(${Math.max(0, 160-(2*this.pollution.earth))}, 33%, 46%)`;
+      continent.style.fill = `hsl(${Math.max(
+        0,
+        160 - 2 * this.pollution.earth
+      )}, 33%, 46%)`;
     });
     this.pollutionEarthTag.innerText = `🌳 ${earth}`;
+  }
+
+  setPollutionChar(pollution) {
+    if (pollution > 0) {
+      return "+";
+    }
+
+    return "";
+  }
+
+  setPollutionClass(tagCLass, pollution) {
+    if (pollution > 0) {
+      return `${tagCLass}-increase`;
+    } else if (pollution < 0) {
+      return `${tagCLass}-decrease`;
+    }
+
+    return "";
   }
 
   updateDisplayEvents() {
     this.eventsTag.innerHTML = this.displayEvents
       .map(
         event =>
-          `<div class="event-details"><p class="event-title">${event.title}</p><img class="event-img" src="./src/img/${event.img}" /><p class="event-desc">${event.desc}</p></div>`
+          `<div class="event-details">
+            <p class="event-title">${event.title} - A.D. ${event.year}</p>
+            <div class="event-pollution">
+              <p class="${this.setPollutionClass(
+                "event-pollution",
+                event.pollution.water
+              )}">💧 ${this.setPollutionChar(event.pollution.water)}${
+            event.pollution.water
+          }</p>
+              <p class="${this.setPollutionClass(
+                "event-pollution",
+                event.pollution.air
+              )}">☁️ ${this.setPollutionChar(event.pollution.air)}${
+            event.pollution.air
+          }</p>
+              <p class="${this.setPollutionClass(
+                "event-pollution",
+                event.pollution.land
+              )}">🌳 ${this.setPollutionChar(event.pollution.land)}${
+            event.pollution.land
+          }</p>
+            </div>
+            <img class="event-img" src="./src/img/${event.img}" />
+            <p class="event-desc">${event.desc}</p>
+          </div>`
       )
       .join("");
   }

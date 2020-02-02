@@ -1,17 +1,11 @@
-'use strict';
+"use strict";
 
-class ModernOceanCleaningSystem {
-  constructor () {
+class ModernOceanCleaningSystem extends Modifier {
+  constructor() {
+    super();
     this.minYear = 2021;
     this.price = 95;
     this.name = "Nowoczesny system oczyszczania oceanów";
-    this.used = false;
-  }
-
-  run () {
-    game.pollution.water -= 20;
-    game.pollution.land += 3;
-    game.pollution.air += 4;
-    game.money -= this.price;
+    this.modifiers({ water: -20, land: 3, air: 4 });
   }
 }
