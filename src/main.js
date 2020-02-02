@@ -5,7 +5,7 @@ class Game {
     this.money = 1;
     this.year = 1800;
     this.maxYear = 2100;
-    this.time = 1000;
+    this.time = 500;
     this.moneyTag = document.getElementById("money");
     this.mapTag = document.getElementsByClassName("map")[0];
     this.newspaperYearTag = document.getElementById("events-year");
@@ -282,9 +282,9 @@ class Game {
     }
 
     if (winGame) {
-      document.getElementById("over-title").innerHTML = "Ju Win";
+      document.getElementById("over-title").innerHTML = "You Win";
     } else {
-      document.getElementById("over-title").innerHTML = "Ju Luz";
+      document.getElementById("over-title").innerHTML = "You Lose";
     }
     this.gameOverScreen.style.display = "flex";
     this.gameOverScreen.classList.add("run");
