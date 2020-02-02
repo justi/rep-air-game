@@ -5,7 +5,7 @@ class NoRestrictionAboutWaterSewege extends Modifier {
     super();
     this.minYear = 1945;
     this.price = 0;
-    this.name = "Brak regulacji dotyczących ścieków";
+    this.name = "Unregulated sewage";
     this.modifiers({ water: 15, land: -5 });
   }
 }
