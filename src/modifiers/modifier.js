@@ -13,9 +13,11 @@ class Modifier {
   }
 
   run() {
-    game.pollution.water += this.modifier.water;
-    game.pollution.land += this.modifier.land;
-    game.pollution.air -= this.modifier.air;
-    game.money -= this.price;
+    if(game.money >= this.price) {
+      game.pollution.water += this.modifier.water;
+      game.pollution.land += this.modifier.land;
+      game.pollution.air += this.modifier.air;
+      game.money -= this.price;
+    }
   }
 }

@@ -2,7 +2,7 @@
 
 class Game {
   constructor() {
-    this.money = 1;
+    this.money = 165;
     this.year = 1800;
     this.maxYear = 2100;
     this.time = 500;
@@ -45,8 +45,8 @@ class Game {
       "UseBicycles",
       "CloseCoalMines",
       "LimitCO2EmissionsInEU",
-      "LimitCO2EmissionsInAsia",
-      "ModernOceanCleaningSystem"
+      "ModernOceanCleaningSystem",
+      "LimitCO2EmissionsInAsia"
     ];
     this.modifiers = [];
 
