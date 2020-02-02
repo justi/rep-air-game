@@ -276,7 +276,7 @@ label {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.80);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -431,4 +431,50 @@ input:not(:disabled) + label:active .modifier-image {
 
 .continent {
   fill: hsl(160, 33%, 46%);
+}
+
+.start {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  background-color: #f3dbbc;
+  color: #473526;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+}
+
+.start div:first-child {
+  border-right: 1px solid #473526;
+}
+
+.start div {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.start div:hover {
+  background-color: #473526;
+  color: #f3dbbc;
+}
+
+.start div h1 {
+  font-size: 60px;
+}
+
+.start .game-title {
+  position: absolute;
+  font-size: 140px;
+  width: 100%;
+  text-align: center;
+  top: 80px;
+  color: #473526;
+  text-shadow: 2px 0 0 #f3dbbc, -2px 0 0 #f3dbbc, 0 2px 0 #f3dbbc, 0 -2px 0 #f3dbbc,
+    1px 1px #f3dbbc, -1px -1px 0 #f3dbbc, 1px -1px 0 #f3dbbc, -1px 1px 0 #f3dbbc;
 }

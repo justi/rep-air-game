@@ -15,6 +15,9 @@ class Game {
     this.pollutionWaterTag = document.getElementById("pollution-water");
     this.pollutionAirTag = document.getElementById("pollution-air");
     this.pollutionEarthTag = document.getElementById("pollution-earth");
+    this.normalModeTag = document.getElementById("normal");
+    this.startTag = document.getElementById("start");
+    this.fastModeTag = document.getElementById("20s");
     this.continentsTags = Array.prototype.slice.call(
       document.getElementsByClassName("continent")
     );
@@ -26,7 +29,7 @@ class Game {
     this.displayEvents = [];
     this.displayEventsCount = 0;
     this.moneyBubbles = this.eventGenerator.generateMoneyBubbles();
-    this.mainTimer = setTimeout(() => this.update(), this.time);
+
     this.percentFormatter = new Intl.NumberFormat("en", {
       style: "unit",
       unit: "percent",
@@ -49,6 +52,22 @@ class Game {
 
     this.initModifiers();
     console.log(this.events, this.moneyBubbles);
+    this.normalModeTag.addEventListener("click", () => this.startNormal());
+    this.fastModeTag.addEventListener("click", () => this.startFast());
+  }
+
+  startNormal() {
+    this.start();
+  }
+
+  startFast() {
+    this.time = 66;
+    this.start();
+  }
+
+  start() {
+    this.startTag.style.display = "none";
+    this.mainTimer = setTimeout(() => this.update(), this.time);
   }
 
   initModifiers() {
