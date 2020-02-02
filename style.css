@@ -2,6 +2,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -395,6 +401,7 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .modifier-pollution {
@@ -415,6 +422,10 @@ label {
 
 input:disabled + label {
   opacity: 0.5;
+}
+
+input:not(:disabled) + label:active .modifier-image {
+  background-color: #f3dbbc;
 }
 
 .continent {
