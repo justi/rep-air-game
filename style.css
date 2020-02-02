@@ -357,6 +357,7 @@ label {
 }
 
 .modifier-pollution {
+  min-width: 130px;
   width: 100%;
   display: flex;
   justify-content: space-between;
