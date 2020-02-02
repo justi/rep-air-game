@@ -54,6 +54,7 @@ label {
 
 .hud p {
   margin-left: 10px;
+  line-height: 50px;
 }
 
 .map {
