@@ -33,7 +33,7 @@ class EventGenerator {
     'australia'
   ];
 
-  generateEvents(startYear = 1800, endYear = 2100, maxEvents = 20) {
+  generateEvents(startYear = 1800, endYear = 2050, maxEvents = 15) {
     let events = [];
     for (let i = 0; i < maxEvents; ++i) {
       let type = this.getRandomItem(Object.keys(this.TYPES));

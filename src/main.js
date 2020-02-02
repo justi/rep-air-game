@@ -63,6 +63,7 @@ class Game {
         if (modifierTag.checked) {
           // modifierTag.disabled = true;
           modifierObj.run();
+          modifierTag.checked = false;
           // modifierObj.used = true;
           this.updateMoney();
         }
