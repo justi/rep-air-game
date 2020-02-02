@@ -5,7 +5,7 @@ class Game {
     this.money = 1;
     this.year = 1800;
     this.maxYear = 2100;
-    this.time = 500;
+    this.time = 1000;
     this.moneyTag = document.getElementById("money");
     this.mapTag = document.getElementsByClassName("map")[0];
     this.newspaperYearTag = document.getElementById("events-year");
