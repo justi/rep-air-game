@@ -35,9 +35,7 @@ class Game {
     this.updateMoney();
     this.updateYear();
     this.updatePopulation();
-    if (this.displayEventsCount !== this.displayEvents.length) {
-      this.updateDisplayEvents();
-    }
+    this.updateDisplayEvents();
     this.modifierTypes = [
       "CloseCoalMines",
       "LimitCO2EmissionsInEU",
@@ -181,7 +179,7 @@ class Game {
       .map(
         event =>
           `<div class="event-details">
-            <p class="event-title">${event.title} - A.D. ${event.year}</p>
+            <p class="event-title">A.D. ${event.year}: ${event.title}</p>
             <div class="event-pollution">
               <p class="${this.setPollutionClass(
                 "event-pollution",
@@ -247,7 +245,9 @@ class Game {
     }
     this.updateYear();
     this.updatePopulation();
-    this.updateDisplayEvents();
+    if (this.displayEventsCount !== this.displayEvents.length) {
+      this.updateDisplayEvents();
+    }
     this.updateModifiers();
     this.updatePollution();
     if (this.year === 2020) {
@@ -277,7 +277,7 @@ class Game {
         this.displayEvents.length - 1
       );
       const event = this.displayEvents[rand];
-      titles[e].innerHTML = `A.D. ${event.year} ${event.title}`;
+      titles[e].innerHTML = `A.D. ${event.year}: ${event.title}`;
       this.displayEvents.splice(rand, 1);
     }
 
