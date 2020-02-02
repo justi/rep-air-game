@@ -89,7 +89,7 @@ class Game {
       });
 
       let modifierLabelTag = document.createElement("label");
-      modifierLabelTag.innerHTML = ` <img class="modifier-image" src="src/img/${modifier}.png" />
+      modifierLabelTag.innerHTML = ` <img class="modifier-image" src="./src/img/${modifier}.png" />
                                       <div class="modifier-pollution">
                                         <p class="${this.setPollutionClass(
                                           "modifier-pollution",
