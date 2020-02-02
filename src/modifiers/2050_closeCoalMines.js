@@ -5,7 +5,7 @@ class CloseCoalMines extends Modifier {
     super();
     this.minYear = 2025;
     this.price = 50;
-    this.name = "Ostateczne zamykanie kopalni węgla";
+    this.name = "Last coal mine closes";
     this.modifiers({ land: -1, air: -8 });
   }
 }

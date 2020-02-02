@@ -31,7 +31,7 @@ class WorldEvent {
     game.displayEvents.unshift({
       year: game.year,
       title:
-        "Oświetlenie płomieniem lamp naftowych zapewnia społeczeństwu światło",
+        "Age of kerosene lamp",
       img: "kerosene_lamp.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
@@ -46,7 +46,7 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Koleje parowe stają się popularnym środkiem transportu",
+      title: "Steam engines and railroads across the world",
       img: "railroad.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
@@ -61,10 +61,10 @@ class WorldEvent {
     this.modifyPollution({ air, water, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Transport morski opanowany przez statki parowe",
+      title: "Steam boats dominate maritime",
       img: "steamship.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Steam ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { air, water, land }
     });
   }
@@ -76,10 +76,10 @@ class WorldEvent {
     this.modifyPollution({ air, water, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Wybuch wulkanu na Oceanie Spokojnym niszczy rafę koralową",
+      title: "Coral reef destroyed by an underwater eruption in Atlantic Ocean",
       img: "volcano_eruption_sea.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Lorem Volcano dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { air, water, land }
     });
   }
@@ -91,7 +91,7 @@ class WorldEvent {
     this.modifyPollution({ air, land, water });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Rowery stają się popularnym środkiem transportu ",
+      title: "Most people go to work by bicycle",
       img: "bicycle.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
@@ -106,7 +106,7 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Wybuch reaktora jądrowego na Wschodzie",
+      title: "Nuclear plant explodes in the East",
       img: "nuclear_plant.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
@@ -122,10 +122,10 @@ class WorldEvent {
     game.displayEvents.unshift({
       year: game.year,
       title:
-        "Aktywność wulkaniczna na Oceanie Atlantyckim niszczy faunę i florę morską",
+        "Volcanic eruption decimates flora and fauna in Pacific Ocean",
       img: "volcano_eruption_sea.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Ocean ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -137,10 +137,10 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Zwiększa się udział elektrowni jądrowych",
+      title: "Nuclear power becomes the main source of electricity",
       img: "nuclear_gain_popularity.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Nuclear ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -152,10 +152,10 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Zwiększa się udział elektrowni fuzyjnych",
+      title: "Fusion reactors dominate the energy market",
       img: "fusion.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Fusion ipsum physics sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -167,10 +167,10 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Fabryki korzystają z własnych farm wiatrowych",
+      title: "Industrial factories are now powered by wind",
       img: "windmills.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Lorem ipsum dolor sit Windmill consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -183,10 +183,10 @@ class WorldEvent {
     game.displayEvents.unshift({
       year: game.year,
       title:
-        "Samolot staje się ważnym środkiem transportu dla ludności cywilnej",
+        "People fly more than ever",
       img: "plane.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Lorem ipsum fly sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -198,10 +198,10 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Uprzemysłowienie wzrasta",
+      title: "Industrialization rises",
       img: "factory.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Lorem Industrialization dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -213,10 +213,10 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Uprzemysłowienie znacznie wzrasta",
+      title: "Industrialization rises...more!",
       img: "oil_platform.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Lorem Industry dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
         pollution: {water, air, land }
     });
   }
@@ -228,10 +228,10 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Wojsko używa sterowców",
+      title: "Military airships dominate battlefields",
       img: "airship_city.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Lorem Airship dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -243,10 +243,10 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Samochody stają się popularnym środkiem transportu",
+      title: "Cars are now common",
       img: "car.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Lorem ipsum car sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -257,10 +257,10 @@ class WorldEvent {
     const air = 8;
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
-      title: "Co dziesiąty obywatel na świecie posiada samochód",
+      title: "Every 10th person now owns a car",
       img: "car.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "10 ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -272,10 +272,10 @@ class WorldEvent {
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
-      title: "Co drugi obywatel na świecie posiada własny samochód",
+      title: "A car in every household",
       img: "car.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Lorem ipsum dolor sit amet car adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -286,10 +286,10 @@ class WorldEvent {
     const air = 0;
     game.displayEvents.unshift({
       year: game.year,
-      title: "Wynaleziono pierwszą kolej parową",
+      title: "New mode of transportation powered by steam",
       img: "railway.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "New ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }
@@ -300,10 +300,10 @@ class WorldEvent {
     const air = 0;
     game.displayEvents.unshift({
       year: game.year,
-      title: "Wynaleziono pierwszy silnik elektryczny",
+      title: "Electric engine built",
       img: "engine.png",
       desc:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
+        "Electric ipsum dolor sit amet engine adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
       pollution: { water, air, land }
     });
   }

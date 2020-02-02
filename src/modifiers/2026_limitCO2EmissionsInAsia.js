@@ -5,7 +5,7 @@ class LimitCO2EmissionsInAsia extends Modifier {
     super();
     this.minYear = 2026;
     this.price = 75;
-    this.name = "Nałożenie limitów emisji CO2 na kraje azjatyckie";
+    this.name = "Asian countries limit their CO2 emissions";
     this.modifiers({ water: 3, land: 3, air: -15 });
   }
 }

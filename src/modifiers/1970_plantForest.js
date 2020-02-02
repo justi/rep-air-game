@@ -5,7 +5,7 @@ class PlantForest extends Modifier {
     super();
     this.minYear = 1810;
     this.price = 20;
-    this.name = 'Nowa kampania "rowerem do pracy"';
+    this.name = 'Forests grow over closed mines';
     this.modifiers({ land: -3, air: -5 });
   }
 }

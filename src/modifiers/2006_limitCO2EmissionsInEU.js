@@ -5,7 +5,7 @@ class LimitCO2EmissionsInEU extends Modifier {
     super();
     this.minYear = 2006;
     this.price = 30;
-    this.name = "Nałożenie limitów emisji CO2 na kraje UE";
+    this.name = "EU promises to limit CO2 emissions";
     this.modifiers({ water: 3, land: 3, air: -8 });
   }
 }

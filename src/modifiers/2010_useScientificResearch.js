@@ -5,7 +5,7 @@ class UseScientificResearch extends Modifier {
     super();
     this.minYear = 1980;
     this.price = 20;
-    this.name = "Badania naukowe polepszają wydajność elektrowni";
+    this.name = "Scientists improve power plants";
     this.modifiers({ land: -1, air: -2 });
   }
 }
