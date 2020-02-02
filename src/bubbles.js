@@ -38,8 +38,13 @@ class Bubbles {
   }
 
   clicked(bubble) {
+    let previous_money = game.money;
     game.money += this.money[bubble.id];
     clearTimeout(this.timers[bubble.id]);
+    if(isNaN(game.money) && !isNaN(previous_money)) {
+      game.money = previous_money;
+    }
+    game.money = Math.max(0, game.money);
     delete this.timers[bubble.id];
     delete this.money[bubble.id];
     console.log(this.timers, this.money);
