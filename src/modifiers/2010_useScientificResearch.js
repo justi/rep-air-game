@@ -1,16 +1,11 @@
-'use strict';
+"use strict";
 
-class UseScientificResearch {
-  constructor () {
+class UseScientificResearch extends Modifier {
+  constructor() {
+    super();
     this.minYear = 2010;
     this.price = 20;
     this.name = "Badania naukowe polepszają wydajność elektrowni";
-    this.used = false;
-  }
-
-  run () {
-    game.pollution.land += -1;
-    game.pollution.air += -2;
-    game.money -= this.price;
+    this.modifiers({ land: -1, air: -2 });
   }
 }

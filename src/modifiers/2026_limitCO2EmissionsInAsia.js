@@ -1,17 +1,11 @@
-'use strict';
+"use strict";
 
-class LimitCO2EmissionsInAsia {
-  constructor () {
+class LimitCO2EmissionsInAsia extends Modifier {
+  constructor() {
+    super();
     this.minYear = 2026;
     this.price = 75;
     this.name = "Nałożenie limitów emisji CO2 na kraje azjatyckie";
-    this.used = false;
-  }
-
-  run () {
-    game.pollution.water += 3;
-    game.pollution.land += 3;
-    game.pollution.air -= 15;
-    game.money -= this.price;
+    this.modifiers({ water: 3, land: 3, air: -15 });
   }
 }
