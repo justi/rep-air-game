@@ -32,16 +32,17 @@ class Bubbles {
       bubble.classList.remove("show");
       bubble.classList.add("hide");
       delete this.timers[name];
+      delete this.money[name];
       this.hide(bubble);
     }, 3000);
   }
 
   clicked(bubble) {
-    console.log(this.money[bubble.id]);
     game.money += this.money[bubble.id];
     clearTimeout(this.timers[bubble.id]);
     delete this.timers[bubble.id];
     delete this.money[bubble.id];
+    console.log(this.timers, this.money);
     bubble.classList.remove("show");
     bubble.classList.add("hide");
     this.hide(bubble);
