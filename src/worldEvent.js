@@ -100,7 +100,7 @@ class WorldEvent {
 
   nuclearPlantExplodesEast() {
     const water = 2;
-    const land = 3;
+    const land = 5;
     const air = 5;
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
@@ -115,7 +115,7 @@ class WorldEvent {
 
   volcanicEruptionPacificOceanKillsFaunaAndFlora() {
     const water = 2;
-    const land = 2;
+    const land = 4;
     const air = 10;
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
@@ -130,8 +130,8 @@ class WorldEvent {
 
   nuclearPlantsGainPopulatiry() {
     const water = 0;
-    const land = 2;
-    const air = -5;
+    const land = 4;
+    const air = -6;
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
@@ -159,9 +159,9 @@ class WorldEvent {
   }
 
   factoriesUseOwnWindmills() {
-    const water = -4;
+    const water = -2;
     const land = 3;
-    const air = -6;
+    const air = -5;
     this.modifyPollution({ water, air, land });
     game.displayEvents.unshift({
       year: game.year,
