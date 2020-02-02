@@ -16,7 +16,7 @@ class Pollution {
   }
 
   killRate (year) {
-    return (year * this.difficulty)*Math.max(0, this.water + this.air + this.earth)/8;
+    return (year * this.difficulty)*Math.max(0, this.water + this.air + this.earth)/4;
   }
 
   increasePollution(year) {

@@ -61,9 +61,9 @@ class Game {
       modifierTag.disabled = true;
       modifierTag.addEventListener("change", () => {
         if (modifierTag.checked) {
-          modifierTag.disabled = true;
+          // modifierTag.disabled = true;
           modifierObj.run();
-          modifierObj.used = true;
+          // modifierObj.used = true;
           this.updateMoney();
         }
       });
@@ -120,7 +120,7 @@ class Game {
   }
 
   pollutionHue(pollution) {
-    return Math.max(-90, 90 - 2 * pollution);
+    return Math.max(-90, 90 - 3 * pollution);
   }
 
   updatePollution() {
