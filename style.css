@@ -143,6 +143,8 @@ label {
   border-bottom: 1px solid #473526;
   margin: 0 10px 10px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 #events p.event-title {
@@ -150,8 +152,9 @@ label {
 }
 
 #events img.event-img {
-  width: 100%;
-  margin: 10px 0;
+  margin: 20px auto;
+  max-height: 250px;
+  max-width: 100%;
 }
 
 #events p.event-desc {
@@ -230,8 +233,11 @@ label {
   width: 500px;
 }
 
-#pollution-water, #pollution-air, #pollution-earth, #population {
-  font-family: 'Playfair Display', serif;
+#pollution-water,
+#pollution-air,
+#pollution-earth,
+#population {
+  font-family: "Playfair Display", serif;
   font-size: 25px;
   filter: sepia(1) hue-rotate(90deg);
   width: 100px;
@@ -323,11 +329,11 @@ label {
   height: 100px;
 }
 
-#modifiers input[type=checkbox] {
+#modifiers input[type="checkbox"] {
   visibility: hidden;
 }
 
-input:disabled+label {
+input:disabled + label {
   opacity: 0.5;
 }
 
