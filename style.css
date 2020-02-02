@@ -273,6 +273,7 @@ label {
   z-index: 1000;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   display: none;
 }
 
@@ -282,6 +283,7 @@ label {
   height: 400px;
   color: #473526;
   border-radius: 2px;
+  overflow: hidden;
 }
 
 .game-over.run .over-newspaper {
@@ -324,6 +326,10 @@ label {
 .game-over .over-newspaper .columns .column {
   padding: 0 10px;
 }
+.game-over .over-newspaper .columns .column-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
 
 .game-over .over-newspaper .columns .column p {
   text-align: justify;
@@ -334,6 +340,31 @@ label {
   border-right: 1px #473526 solid;
 }
 
+.game-over a,
+.game-over a:visited,
+.game-over a:active {
+  margin-top: 20px;
+  border-radius: 2px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #473526;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.game-over a:hover {
+  background-color: #f3dbbc;
+  color: #473526;
+}
+
+.game-over.run a {
+  animation: gameover-button 1s ease;
+}
+
 @keyframes gameover {
   0% {
     transform: translate(140%, 120%) rotate(-240deg) scale(1.8);
@@ -341,6 +372,16 @@ label {
 
   100% {
     transform: translate(0%, 0%) rotate(0) scale(1);
+  }
+}
+
+@keyframes gameover-button {
+  0% {
+    transform: translateY(400px);
+  }
+
+  100% {
+    transform: translateY(0%);
   }
 }
 

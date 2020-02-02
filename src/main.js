@@ -24,6 +24,7 @@ class Game {
     this.eventGenerator = new EventGenerator();
     this.events = this.eventGenerator.generateEvents();
     this.displayEvents = [];
+    this.displayEventsCount = 0;
     this.moneyBubbles = this.eventGenerator.generateMoneyBubbles();
     this.mainTimer = setTimeout(() => this.update(), this.time);
     this.percentFormatter = new Intl.NumberFormat("en", {
@@ -34,7 +35,9 @@ class Game {
     this.updateMoney();
     this.updateYear();
     this.updatePopulation();
-    this.updateDisplayEvents();
+    if (this.displayEventsCount !== this.displayEvents.length) {
+      this.updateDisplayEvents();
+    }
     this.modifierTypes = [
       "CloseCoalMines",
       "LimitCO2EmissionsInEU",
@@ -173,6 +176,7 @@ class Game {
   }
 
   updateDisplayEvents() {
+    this.displayEventsCount = this.displayEvents.length;
     this.eventsTag.innerHTML = this.displayEvents
       .map(
         event =>
@@ -218,14 +222,15 @@ class Game {
   }
 
   update() {
+    this.year++;
     if (this.isGameOver()) {
       this.showGameOver();
       return;
     }
     if (this.isGameComplete()) {
+      this.showGameOver(true);
       return;
     }
-    this.year++;
     const event = this.events.find(event => event.year === this.year);
     const bubble = this.moneyBubbles.find(bubble => bubble.year === this.year);
     if (event) {
@@ -256,14 +261,31 @@ class Game {
   }
 
   isGameComplete() {
-    return this.pollution.population !== 0 && this.year === 2100;
+    return this.pollution.population > 0 && this.year === 2100;
   }
 
   isGameOver() {
     return this.pollution.population === 0;
   }
 
-  showGameOver() {
+  showGameOver(winGame = false) {
+    const titles = document.getElementsByClassName("column-title");
+
+    for (let e = 0; e < 3; e++) {
+      const rand = this.eventGenerator.getRandomInt(
+        0,
+        this.displayEvents.length - 1
+      );
+      const event = this.displayEvents[rand];
+      titles[e].innerHTML = `A.D. ${event.year} ${event.title}`;
+      this.displayEvents.splice(rand, 1);
+    }
+
+    if (winGame) {
+      document.getElementById("over-title").innerHTML = "Ju Win";
+    } else {
+      document.getElementById("over-title").innerHTML = "Ju Luz";
+    }
     this.gameOverScreen.style.display = "flex";
     this.gameOverScreen.classList.add("run");
   }

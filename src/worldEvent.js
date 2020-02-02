@@ -50,7 +50,7 @@ class WorldEvent {
       img: "railroad.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
-      pollution: { water, air, land  }
+      pollution: { water, air, land }
     });
   }
 
@@ -217,7 +217,7 @@ class WorldEvent {
       img: "oil_platform.png",
       desc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum ullam autem deserunt perferendis maiores repudiandae dolore neque consectetur quibusdam perspiciatis necessitatibus modi ducimus, aliquam, asperiores maxime earum consequuntur sunt.",
-        pollution: {water, air, land }
+      pollution: { water, air, land }
     });
   }
 
