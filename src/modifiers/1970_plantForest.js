@@ -6,6 +6,6 @@ class PlantForest extends Modifier {
     this.minYear = 1810;
     this.price = 2;
     this.name = 'Forests grow over closed mines';
-    this.modifiers({ land: -1, air: -1 });
+    this.modifiers({ water: -1, land: -1, air: -1 });
   }
 }
