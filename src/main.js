@@ -2,7 +2,7 @@
 
 class Game {
   constructor() {
-    this.money = 165;
+    this.money = 1;
     this.year = 1800;
     this.maxYear = 2100;
     this.time = 500;
