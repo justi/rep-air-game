@@ -37,13 +37,13 @@ class Game {
     this.updatePopulation();
     this.updateDisplayEvents();
     this.modifierTypes = [
+      "PlantForest",
+      "UseScientificResearch",
+      "UseBicycles",
       "CloseCoalMines",
       "LimitCO2EmissionsInEU",
-      "ModernOceanCleaningSystem",
-      "UseBicycles",
-      "UseScientificResearch",
-      "PlantForest",
-      "LimitCO2EmissionsInAsia"
+      "LimitCO2EmissionsInAsia",
+      "ModernOceanCleaningSystem"
     ];
     this.modifiers = [];
 

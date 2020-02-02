@@ -3,8 +3,8 @@
 class UseScientificResearch extends Modifier {
   constructor() {
     super();
-    this.minYear = 1980;
-    this.price = 20;
+    this.minYear = 1850;
+    this.price = 15;
     this.name = "Scientists improve power plants";
     this.modifiers({ land: -1, air: -2 });
   }
